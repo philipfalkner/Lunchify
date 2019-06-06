@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lunchify App</title>
+  <meta name='viewport' content='width=device-width' />
+  <link type='text/css' rel='stylesheet' href='https://unpkg.com/bootstrap/dist/css/bootstrap.min.css' />
+  <link type='text/css' rel='stylesheet' href='https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css' />
+  <script src='https://unpkg.com/vue'></script>
+  <script src='https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js'></script>
+  <script src='https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js'></script>
+</head>
+
+<body>
+  <div id='lunchify-app'>
+    <b-navbar toggleable='lg' type='light' variant='light'>
+      <b-navbar-brand href='#'><strong>Lunchify</strong> - <i>The app that picks your meals for you!</i>
+      </b-navbar-brand>
+
+      <b-navbar-nav class='ml-auto'>
+        <b-button v-b-tooltip.hover title='This will pick a random lunch for you' size='lg' v-on:click='pickMyLunch'>
+          Pick My Lunch
+        </b-button>
+      </b-navbar-nav>
+    </b-navbar>
+    <br />
+
+    <div v-if='selectedLunch'>
+      <b-card :title='selectedLunch.label' :img-src='selectedLunch.img' style='max-width: 30rem; margin: auto;'>
+        <b-card-text>{{selectedLunch.info}}</b-card-text>
+      </b-card>
+    </div>
+    <div v-else style='text-align: center; color: rgb(172, 172, 172)'>
+      <p>You haven't picked a lunch yet...</p>
+    </div>
+  </div>
+  <script src='main.js'></script>
+</body>
+
+</html>
