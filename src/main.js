@@ -11,7 +11,7 @@ window.app = new Vue({
     },
     methods: {
       pickMyLunch: function () {
-          this.selectedLunch = lunchOptions[Math.floor(Math.random() * 4)]
+          this.selectedLunch = lunchOptions[Math.floor(Math.random() * lunchOptions.length)]
       }
     }
 })
