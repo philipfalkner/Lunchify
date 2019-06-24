@@ -77,10 +77,10 @@ export default {
       segment.addChild(graphics)
 
       const text = new PIXI.Text(calculatedSegment.label)
+      // text.anchor.set(0, 0.5)
       text.angle = calculatedSegment.degrees / 2
-      text.x = radius * 0.15
-      text.y = radius * 0.15
-      text.anchor.set(0, 0.5)
+      text.x = radius * 0.25
+      text.y = text.angle - (text.height / 2)
       segment.addChild(text)
 
       degreesUsed += calculatedSegment.degrees
