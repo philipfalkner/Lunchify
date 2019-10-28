@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import SpinWheel from './components/SpinWheel.vue'
-
 const lunchOptions = [
   {
     label: "Fries",
@@ -65,7 +63,7 @@ const lunchOptions = [
 export default {
   name: 'lunchify-app',
   components: {
-    SpinWheel
+    'SpinWheel': () => import ('./components/SpinWheel.vue')
   },
   data: function () {
     return {

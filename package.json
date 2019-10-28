@@ -6,44 +6,28 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "clean": "rm dist/bundle.js",
+    "start": "parcel public/index.html -p 3000 --open",
+    "build": "parcel build public/index.html"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.21",
     "core-js": "^2.6.5",
     "pixi.js": "^5.0.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "autoprefixer": "^9.6.4",
+    "eslint": "^6.5.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-eslint": "^1.0.7",
     "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
   },
   "browserslist": [
     "> 1%",

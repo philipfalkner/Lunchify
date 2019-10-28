@@ -2,30 +2,32 @@
 
 The app that picks your lunch for you!
 
-## Project setup
-```
+## Building and running on localhost
+
+First install dependencies:
+
+```sh
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+To run in hot module reloading mode:
+
+```sh
+npm start
 ```
 
-### Compiles and minifies for production
-```
+To create a production build:
+
+```sh
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
+## Running
+
+```sh
+node dist/bundle.js
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Customize configuration
 
-### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
