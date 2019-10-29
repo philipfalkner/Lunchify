@@ -1,6 +1,4 @@
-var exports = module.exports = {}
-
-exports.lunches = [
+const lunchOptions = [
   {
     id: 1,
     label: 'Fries',
@@ -30,3 +28,5 @@ exports.lunches = [
     img: 'https://recipes.timesofindia.com/photo/53110049.cms'
   }
 ]
+
+export { lunchOptions }

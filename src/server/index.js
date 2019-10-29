@@ -1,8 +1,6 @@
-const express = require('express')
-const path = require('path')
-const store = require('./store.js')
-
-const lunchOptions = store.lunches
+import express from 'express'
+import path from 'path'
+import { lunchOptions } from './store.js'
 
 const app = express()
 

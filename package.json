@@ -6,9 +6,11 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "start": "node src/server/index.js",
+    "start": "node dist/server/index.js",
     "prebuild": "npm run clean",
-    "build": "parcel build src/client/index.html --out-dir dist/client",
+    "build:client": "parcel build src/client/index.html --out-dir dist/client",
+    "build:server": "parcel build src/server/index.js --target=node --out-dir dist/server",
+    "build": "npm run build:client && npm run build:server",
     "clean": "rimraf dist",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
     "dev:client": "parcel watch src/client/index.html --out-dir dist/client",
