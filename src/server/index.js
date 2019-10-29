@@ -1,9 +1,31 @@
 const express = require('express')
 const path = require('path')
+const store = require('./store.js')
+
+const lunchOptions = store.lunches
 
 const app = express()
 
-// Serve out of the dist folder
+// API
+app.get('/api/lunches', (req, res) => {
+  res.send(lunchOptions)
+})
+
+app.get('/api/lunches/:lunchId', (req, res) => {
+  const lunch = lunchOptions.find(e => e.id == req.params.lunchId)
+  if (lunch) {
+    res.send(lunch)
+  } else {
+    res.status(404).send()
+  }
+})
+
+app.post('/api/lunches/actions/pick', (req, res) => {
+  const selectedLunch = lunchOptions[Math.floor(Math.random() * lunchOptions.length)]
+  res.send(selectedLunch)
+})
+
+// Serve client out of the dist folder
 app.set('client', path.resolve('.', 'dist', 'client'))
 app.use(express.static(app.get('client')))
 

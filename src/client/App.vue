@@ -15,7 +15,7 @@
     <b-container>
       <b-row>
         <b-col>
-          <SpinWheel :segments='lunchOptions' class='lunchWheel' />
+          <SpinWheel v-if='lunchOptions' :segments='lunchOptions' class='lunchWheel' />
         </b-col>
         <b-col>
           <div v-if='selectedLunch'>
@@ -33,33 +33,6 @@
 </template>
 
 <script>
-const lunchOptions = [
-  {
-    label: "Fries",
-    colour: "#fff200",
-    info: "Great choice! Fries rule!",
-    img: "https://cms.splendidtable.org/sites/default/files/styles/w2000/public/french-fries.jpg?itok=FS-YwUYH"
-  },
-  {
-    label: "Sushi",
-    colour: "#f6989d",
-    info: "A veggie role for me please!",
-    img: "https://www.parcelpal.com/wp-content/uploads/2017/06/MomoSushi.jpg"
-  },
-  {
-    label: "Salad",
-    colour: "#3cb878",
-    info: "A very healthy choice.",
-    img: "https://www.ndtv.com/cooks/images/tossed-mixed-salad-620.jpg"
-  },
-  {
-    label: "Pizza",
-    colour: "#ee1c24",
-    info: "Delecious, yummy, tasty pizza...",
-    img: "https://recipes.timesofindia.com/photo/53110049.cms"
-  }
-]
-
 export default {
   name: 'lunchify-app',
   components: {
@@ -67,13 +40,23 @@ export default {
   },
   data: function () {
     return {
-      lunchOptions: lunchOptions,
+      lunchOptions: null,
       selectedLunch: null
     }
   },
+  created: async function () {
+    await this.fetchData()
+  },
   methods: {
-    pickMyLunch: function () {
-      this.selectedLunch = lunchOptions[Math.floor(Math.random() * lunchOptions.length)]
+    fetchData: async function () {
+      const response = await fetch('/api/lunches')
+      const jsonData = await response.json()
+      this.lunchOptions = jsonData
+    },
+    pickMyLunch: async function () {
+      const response = await fetch('/api/lunches/actions/pick', { method: 'POST' })
+      const jsonData = await response.json()
+      this.selectedLunch = jsonData
     }
   }
 }
