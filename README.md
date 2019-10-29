@@ -2,7 +2,7 @@
 
 The app that picks your lunch for you!
 
-## Building and running on localhost
+## Building and running
 
 First install dependencies:
 
@@ -13,21 +13,12 @@ npm install
 To run in hot module reloading mode:
 
 ```sh
-npm start
+npm run dev
 ```
 
-To create a production build:
+To create and serve a production build:
 
 ```sh
 npm run build
+npm start
 ```
-
-## Running
-
-```sh
-node dist/bundle.js
-```
-
-## Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
