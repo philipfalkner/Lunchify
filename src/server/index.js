@@ -1,26 +1,26 @@
 import express from 'express'
 import path from 'path'
-import { lunchOptions } from './store.js'
+import { dayOptions } from './store.js'
 
 const app = express()
 
 // API
-app.get('/api/lunches', (req, res) => {
-  res.send(lunchOptions)
+app.get('/api/days', (req, res) => {
+  res.send(dayOptions)
 })
 
-app.get('/api/lunches/:lunchId', (req, res) => {
-  const lunch = lunchOptions.find(e => e.id == req.params.lunchId)
-  if (lunch) {
-    res.send(lunch)
+app.get('/api/days/:dayId', (req, res) => {
+  const day = dayOptions.find(e => e.id == req.params.dayId)
+  if (day) {
+    res.send(day)
   } else {
     res.status(404).send()
   }
 })
 
-app.post('/api/lunches/actions/pick', (req, res) => {
-  const selectedLunch = lunchOptions[Math.floor(Math.random() * lunchOptions.length)]
-  res.send(selectedLunch)
+app.post('/api/days/actions/pick', (req, res) => {
+  const selectedDay = dayOptions[Math.floor(Math.random() * dayOptions.length)]
+  res.send(selectedDay)
 })
 
 // Serve client out of the dist folder

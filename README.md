@@ -1,6 +1,6 @@
-# Lunchify
+# Team Mustard
 
-The app that picks your lunch for you!
+The app that picks Team Mustard day!
 
 ## Building and running
 

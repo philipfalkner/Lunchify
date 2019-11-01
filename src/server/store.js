@@ -1,32 +1,39 @@
-const lunchOptions = [
+const dayOptions = [
   {
     id: 1,
-    label: 'Fries',
+    label: 'Monday',
     colour: '#fff200',
-    info: 'Great choice! Fries rule!',
-    img: 'https://cms.splendidtable.org/sites/default/files/styles/w2000/public/french-fries.jpg?itok=FS-YwUYH'
+    info: null,
+    img: 'https://thelonepanda.files.wordpress.com/2015/02/img_3656.jpg'
   },
   {
     id: 2,
-    label: 'Sushi',
+    label: 'Tuesday',
     colour: '#f6989d',
-    info: 'A veggie role for me please!',
-    img: 'https://www.parcelpal.com/wp-content/uploads/2017/06/MomoSushi.jpg'
+    info: null,
+    img: 'https://cdn.someecards.com/someecards/filestorage/tuesday-procrastinate-put-off-work-funny-ecard-zHJ.png'
   },
   {
     id: 3,
-    label: 'Salad',
+    label: 'Wednesday',
     colour: '#3cb878',
-    info: 'A very healthy choice.',
-    img: 'https://www.ndtv.com/cooks/images/tossed-mixed-salad-620.jpg'
+    info: null,
+    img: 'https://66.media.tumblr.com/25c52cf5015231f2f0232dd0847cf6c8/tumblr_pu6oyzYSXs1rpuw07o1_500.jpg'
   },
   {
     id: 4,
-    label: 'Pizza',
-    colour: '#ee1c24',
-    info: 'Delecious, yummy, tasty pizza...',
-    img: 'https://recipes.timesofindia.com/photo/53110049.cms'
+    label: 'Thursday',
+    colour: '#f26522',
+    info: null,
+    img: 'https://i1.wp.com/www.techjunkie.com/wp-content/uploads/2017/07/funny-thursday-pictures983300.jpg'
+  },
+  {
+    id: 5,
+    label: 'Friday',
+    colour: '#00aef0',
+    info: null,
+    img: 'http://www.brainlesstales.com/images/2015/Mar/fry-day.jpg'
   }
 ]
 
-export { lunchOptions }
+export { dayOptions }
